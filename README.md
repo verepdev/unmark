@@ -4,6 +4,14 @@
 
 `unmark` is a command-line tool that removes the small sparkle Google Gemini stamps in the bottom-right corner of every image it generates. It works fully offline using deterministic image-processing strategies — no cloud calls, no API keys, no telemetry.
 
+## Example
+
+A real Gemini-generated image, before and after `unmark --tool gemini`:
+
+| Before | After |
+|---|---|
+| ![before](examples/gemini-before.png) | ![after](examples/gemini-after.png) |
+
 ## Why
 
 Gemini stamps a small watermark on every image it generates. Generic inpainting tools either leave visible artifacts, demand manual masking, or send your image to a remote server. `unmark` knows exactly where the Gemini sparkle sits and removes it cleanly with image symmetry + content-aware fill — locally, in seconds.
