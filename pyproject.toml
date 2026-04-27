@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unmark"
+version = "0.1.0"
+description = "Strip Google Gemini's watermark from generated images. Fast, local, no API."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "verepdev" }]
+requires-python = ">=3.10"
+keywords = ["watermark", "ai", "gemini", "midjourney", "dalle", "image-processing", "inpainting"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+    "opencv-python>=4.8",
+    "numpy>=1.24",
+    "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.6",
+    "pre-commit>=3.5",
+]
+
+[project.scripts]
+unmark = "unmark.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/verepdev/unmark"
+Repository = "https://github.com/verepdev/unmark"
+Issues = "https://github.com/verepdev/unmark/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["unmark*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
